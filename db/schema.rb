@@ -18,11 +18,18 @@ ActiveRecord::Schema.define(version: 20151028155900) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.integer  "category_number"
     t.text     "description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
+  create_table "market_product_shopping_sessions", id: false, force: :cascade do |t|
+    t.integer "market_products_id"
+    t.integer "shopping_session_id"
+  end
+
+  add_index "market_product_shopping_sessions", ["market_products_id"], name: "index_market_product_shopping_sessions_on_market_products_id", using: :btree
+  add_index "market_product_shopping_sessions", ["shopping_session_id"], name: "index_market_product_shopping_sessions_on_shopping_session_id", using: :btree
 
   create_table "market_products", force: :cascade do |t|
     t.float    "price"
@@ -33,15 +40,8 @@ ActiveRecord::Schema.define(version: 20151028155900) do
   end
 
   add_index "market_products", ["market_id"], name: "index_market_products_on_market_id", using: :btree
+  add_index "market_products", ["product_id", "created_at"], name: "index_market_products_on_product_id_and_created_at", using: :btree
   add_index "market_products", ["product_id"], name: "index_market_products_on_product_id", using: :btree
-
-  create_table "market_products_shopping_sessions", id: false, force: :cascade do |t|
-    t.integer "market_products_id"
-    t.integer "shopping_session_id"
-  end
-
-  add_index "market_products_shopping_sessions", ["market_products_id"], name: "index_market_products_shop  ping_sessions_on_market_products_id", using: :btree
-  add_index "market_products_shopping_sessions", ["shopping_session_id"], name: "index_market_products_shopping_sessions_on_shopping_session_id", using: :btree
 
   create_table "markets", force: :cascade do |t|
     t.string   "adress"
@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 20151028155900) do
   end
 
   add_index "shopping_sessions", ["market_id"], name: "index_shopping_sessions_on_market_id", using: :btree
-  add_index "shopping_sessions", ["user_id", "created_at"], name: "index_shopping_sessions_on_user_id_and_created_at", using: :btree
   add_index "shopping_sessions", ["user_id"], name: "index_shopping_sessions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -86,6 +85,8 @@ ActiveRecord::Schema.define(version: 20151028155900) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   add_foreign_key "market_products", "markets"
+  add_foreign_key "market_products", "products"
   add_foreign_key "products", "categories"
+  add_foreign_key "shopping_sessions", "markets"
   add_foreign_key "shopping_sessions", "users"
 end

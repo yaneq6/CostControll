@@ -3,7 +3,7 @@ class MarketProduct < ActiveRecord::Base
   belongs_to :market
   belongs_to :product
   validates :price, presence: true
-  validates :product_id, presence: true, uniqueness: true
+  validates :product_id, presence: true
   validates :market_id, presence: true
 
 

@@ -28,22 +28,22 @@ markets_list = Market.create([{adress: 'Janusza pawlacza 3',
                               },
                              ])
 categories_list = Category.create([{name: 'Priority',
-                                    category_number: '1',
+
                                     description: 'most important stuff'
                                    },
                                    {name: 'Important',
-                                    category_number: '2',
+
                                     description: 'second most important stuff'},
                                    {name: 'Average',
-                                    category_number: '3',
+
                                     description: 'meager stuff'
                                    },
                                    {name: 'Not important',
-                                    category_number: '4',
+
                                     description: 'not important stuff'
                                    },
                                    {name: 'Least important',
-                                    category_number: '5',
+
                                     description: 'least important stuff'}
 
                                   ])
