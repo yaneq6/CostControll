@@ -1,0 +1,9 @@
+<%= form_for(@shopping_session) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_field :name, placeholder: "Name new shopping session" %><br>
+      Choose a market
+      <%= f.collection_select :market_id, Market.all, :id, :adress %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

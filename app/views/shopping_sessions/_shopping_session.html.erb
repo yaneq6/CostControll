@@ -1,0 +1,16 @@
+<li id="shopping_session-<%= shopping_session.id %>">
+
+  <span class="user"><%=  shopping_session.created_at %></span>
+  <span class="name"><%=link_to shopping_session.name, shopping_session.user %></span>
+  <span class="timestamp"><br>
+    Posted <%= time_ago_in_words(shopping_session.created_at) %> ago.
+
+
+    <!--A stub. Currently deletes a session instead of archivizing it -->
+
+    <% if current_user?(shopping_session.user) %>
+      <%= link_to "delete", shopping_session, method: :delete,
+                  data: { confirm: "You sure?" } %>
+    <% end %><br>
+  </span><br>
+</li>

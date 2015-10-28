@@ -1,0 +1,46 @@
+<div class="center jumbotron">
+  <h1>Cost Control App</h1>
+
+  <h2>
+
+  </h2>
+  <% if logged_in? %>
+      <div class="row">
+        <aside class="col-md-4">
+          <section class="user_info">
+            <%= render 'shared/user_info' %>
+          </section>
+          <section class="shopping_session_form">
+            <%= render 'shared/shopping_session_form' %><br><br>
+            <%= link_to "Create new market", newmarket_path, class: "btn btn-lg btn-primary" %><br>
+            <br>
+            <%= link_to "Create new product", newproduct_path, class: "btn btn-lg btn-primary" %><br>
+            <br>
+            <%= link_to "Create new market product", newmarketproduct_path, class: "btn btn-lg btn-primary" %>
+
+          </section>
+
+        </aside>
+      </div>
+      <div class="row">
+        <aside class="col-md-4">
+
+            <%= link_to "Market list", markets_path, class: "btn btn-lg btn-primary" %><br>
+            <br>
+            <%= link_to "Product list", products_path, class: "btn btn-lg btn-primary" %><br>
+            <br>
+            <%= link_to "Market product list", shoppinglist_path, class: "btn btn-lg btn-primary" %>
+
+          </section>
+
+        </aside>
+      </div>
+
+
+  <% else %>
+
+  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+
+<% end %>
+</div>
+

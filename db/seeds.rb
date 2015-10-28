@@ -5,3 +5,83 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+users_list = User.create([{first_name: 'Krzysiek',
+                           last_name: 'Niepok',
+                           email: '123@123.pl',
+                           password: '123123',
+                          },
+                          {first_name: 'twoj',
+                           last_name: 'rodzic',
+                           email: '123@321.pl',
+                           password: '123123',
+                          }
+                         ])
+
+markets_list = Market.create([{adress: 'Janusza pawlacza 3',
+                               latitude: '32.123124',
+                               longitude: '21.12121'
+                              },
+                              {adress: 'twojego starego 2',
+                               latitude: '12.1212121',
+                               longitude: '32.12121'
+                              },
+                             ])
+categories_list = Category.create([{name: 'Priority',
+                                    category_number: '1',
+                                    description: 'most important stuff'
+                                   },
+                                   {name: 'Important',
+                                    category_number: '2',
+                                    description: 'second most important stuff'},
+                                   {name: 'Average',
+                                    category_number: '3',
+                                    description: 'meager stuff'
+                                   },
+                                   {name: 'Not important',
+                                    category_number: '4',
+                                    description: 'not important stuff'
+                                   },
+                                   {name: 'Least important',
+                                    category_number: '5',
+                                    description: 'least important stuff'}
+
+                                  ])
+
+
+products_list = Product.create([{name: 'Bułka',
+                                 category_id: "1",
+                                 barcode: '5901id2345'
+                                },
+                                {name: 'Jajko',
+                                 category_id: '1',
+                                 barcode: '50193955'
+                                },
+                                {name: 'Piwko',
+                                 category_id: '2',
+                                 barcode: '2323504'
+                                }
+                               ])
+
+marketproducts_list = MarketProduct.create([{price: '0.35',
+                                             market_id: "1",
+                                             product_id: '1'
+                                            },
+                                            {price: '0.28',
+                                             market_id: "1",
+                                             product_id: '2'
+                                            },
+                                            {price: '3.50',
+                                             market_id: "1",
+                                             product_id: '3'
+                                            },
+                                            {price: '0.30',
+                                             market_id: "2",
+                                             product_id: '2'
+                                            },
+                                            {price: '3.40',
+                                             market_id: "2",
+                                             product_id: '3'
+                                            }
+                                           ])
+

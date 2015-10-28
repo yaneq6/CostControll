@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Market Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+    <% @market_products.each do |market_product| %>
+      <tr>
+        <td><%= market_product.price %></td>
+
+        <td><%= market_product.market.adress %></td>
+
+        <td><%= market_product.product.name %></td>
+
+
+        <td><%= link_to 'Show', market_product %></td>
+        <td><%= link_to 'Edit', edit_market_product_path(market_product) %></td>
+        <td><%= link_to 'Destroy', market_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Market product', new_market_product_path %>
