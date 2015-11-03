@@ -27,10 +27,12 @@ Rails.application.routes.draw do
   get 'shoppinglist' => 'market_products#index'
   get 'markets' => 'markets#index'
   get 'products' => 'products#index'
+  get 'shoppinglist' => 'shopping_sessions#new'
+
 
 
   resources :users
-  resources :shopping_sessions,          only: [:create, :destroy]
+  resources :shopping_sessions
 
 
 

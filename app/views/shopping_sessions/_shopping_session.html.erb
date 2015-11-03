@@ -1,7 +1,7 @@
 <li id="shopping_session-<%= shopping_session.id %>">
 
   <span class="user"><%=  shopping_session.created_at %></span>
-  <span class="name"><%=link_to shopping_session.name, shopping_session.user %></span>
+  <span class="name"><%=link_to shopping_session.name, shopping_session %></span>
   <span class="timestamp"><br>
     Posted <%= time_ago_in_words(shopping_session.created_at) %> ago.
 

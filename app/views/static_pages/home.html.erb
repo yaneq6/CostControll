@@ -1,4 +1,4 @@
-<div class="center jumbotron">
+<div class="center jumbotron" xmlns="http://www.w3.org/1999/html">
   <h1>Cost Control App</h1>
 
   <h2>
@@ -12,29 +12,26 @@
           </section>
           <section class="shopping_session_form">
             <%= render 'shared/shopping_session_form' %><br><br>
-            <%= link_to "Create new market", newmarket_path, class: "btn btn-lg btn-primary" %><br>
+            </section>
+
+            <%= link_to "Create new market", newmarket_path, class: "btn btn-lg btn-info" %><br>
             <br>
-            <%= link_to "Create new product", newproduct_path, class: "btn btn-lg btn-primary" %><br>
+            <%= link_to "Create new product", newproduct_path, class: "btn btn-lg btn-info" %><br>
             <br>
-            <%= link_to "Create new market product", newmarketproduct_path, class: "btn btn-lg btn-primary" %>
+            <%= link_to "Create new market product", newmarketproduct_path, class: "btn btn-lg btn-info" %>
+            <br><br>
+            <%= link_to "Market list", markets_path, class: "btn btn-lg btn-success" %><br>
+            <br>
+            <%= link_to "Product list", products_path, class: "btn btn-lg btn-success" %><br>
+            <br>
+            <%= link_to "Market product list", shoppinglist_path, class: "btn btn-lg btn-success" %>
+
 
           </section>
 
         </aside>
       </div>
-      <div class="row">
-        <aside class="col-md-4">
 
-            <%= link_to "Market list", markets_path, class: "btn btn-lg btn-primary" %><br>
-            <br>
-            <%= link_to "Product list", products_path, class: "btn btn-lg btn-primary" %><br>
-            <br>
-            <%= link_to "Market product list", shoppinglist_path, class: "btn btn-lg btn-primary" %>
-
-          </section>
-
-        </aside>
-      </div>
 
 
   <% else %>

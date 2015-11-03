@@ -1,4 +1,4 @@
 
-<h1><%= current_user.first_name %></h1>
-<span><%= link_to "view my shoppign sessions", current_user %></span>
+<h1>Hi <br><%= current_user.first_name %></h1>
+<span><%= link_to "view my shopping sessions", current_user %></span>
 <span><%= pluralize(current_user.shopping_sessions.count, "Shopping session") %></span>

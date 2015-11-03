@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<div class="center jumbotron">
 
 <h1>Listing Market Products</h1>
 
@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th>Price</th>
+      <th>Adress</th>
+      <th>Product</th>
       <th colspan="3"></th>
     </tr>
 
@@ -14,7 +16,7 @@
   <tbody>
     <% @market_products.each do |market_product| %>
       <tr>
-        <td><%= market_product.price %></td>
+        <td><%= number_to_currency(market_product.price, unit:"zł", separator: ",", format: "%n %u") %></td>
 
         <td><%= market_product.market.adress %></td>
 
@@ -31,4 +33,6 @@
 
 <br>
 
-<%= link_to 'New Market product', new_market_product_path %>
+<%= link_to 'New Market product', new_market_product_path %><br>
+  <%= link_to 'back', current_user %>
+</div>

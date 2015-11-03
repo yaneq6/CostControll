@@ -18,6 +18,17 @@ class ShoppingSessionsController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
+  def show
+    @shopping_session = ShoppingSession.find(params[:id])
+    @product_listing = @shopping_session.market_products
+
+  end
+
+  def index
+    @shopping_session = ShoppingSession.paginate(page: params[:page])
+  end
+
+
   private
 
   def shopping_session_params
