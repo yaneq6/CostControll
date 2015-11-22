@@ -18,13 +18,22 @@ users_list = User.create([{first_name: 'Krzysiek',
                           }
                          ])
 
-markets_list = Market.create([{adress: 'Janusza pawlacza 3',
+markets_list = Market.create([{adress: 'Carrefour złota 54',
                                latitude: '32.123124',
                                longitude: '21.12121'
                               },
-                              {adress: 'twojego starego 2',
+                              {adress: 'Żabka Al. Ujazdowskie',
                                latitude: '12.1212121',
                                longitude: '32.12121'
+                              },
+                             ])
+shopping_sessions_list =ShoppingSession.create([{name: 'Zakupy 11.11.2015',
+                               user_id: '1',
+                               market_id: '1'
+                              },
+                              {name: 'Zakupy do domu 20.11.2015',
+                               user_id: '1',
+                               market_id: '2'
                               },
                              ])
 categories_list = Category.create([{name: 'Priority',
@@ -49,39 +58,111 @@ categories_list = Category.create([{name: 'Priority',
                                   ])
 
 
-products_list = Product.create([{name: 'Bułka',
-                                 category_id: "1",
-                                 barcode: '5901id2345'
+products_list = Product.create([{name: 'Masło orzechowe kremowe 350 g',
+                                 category_id: "3",
+                                 barcode: '5900571050020'
                                 },
-                                {name: 'Jajko',
+                                {name: 'Cisowianka Naturalna woda mineralna niegazowana niskosodowa 1,5 l',
                                  category_id: '1',
-                                 barcode: '50193955'
+                                 barcode: '5902078000201'
                                 },
-                                {name: 'Piwko',
+                                {name: 'Frosch Balsam do mycia naczyń cytrynowy 500 ml',
+                                 category_id: '1',
+                                 barcode: '4009175148117'
+                                },
+                                {name: 'Aksam Orzeszki Beskidzkie w karmelu 100 g',
+                                 category_id: '5',
+                                 barcode: '5907029001009'
+                                },
+                                {name: 'Alpenliebe Espresso Cukierki kawowe 30 g',
+                                 category_id: '4',
+                                 barcode: '5902078000201'
+                                },
+                                {name: 'Kasza jęczmienna Melvit 400g mazurska',
                                  category_id: '2',
-                                 barcode: '2323504'
-                                }
+                                 barcode: '5906827002409'
+                                },
+
                                ])
 
-marketproducts_list = MarketProduct.create([{price: '0.35',
+marketproducts_list = MarketProduct.create([{price: '9.50',
                                              market_id: "1",
                                              product_id: '1'
                                             },
-                                            {price: '0.28',
+                                            {price: '2.50',
                                              market_id: "1",
                                              product_id: '2'
                                             },
-                                            {price: '3.50',
-                                             market_id: "1",
-                                             product_id: '3'
+                                            {price: '10.07',
+                                             market_id: "2",
+                                             product_id: '1'
                                             },
-                                            {price: '0.30',
+                                            {price: '2.29',
                                              market_id: "2",
                                              product_id: '2'
                                             },
-                                            {price: '3.40',
+                                            {price: '7.40',
+                                             market_id: "1",
+                                             product_id: '3'
+                                            },
+                                            {price: '7.20',
                                              market_id: "2",
                                              product_id: '3'
-                                            }
+                                            },
+                                            {price: '1.78',
+                                             market_id: "1",
+                                             product_id: '4'
+                                            },
+                                            {price: '1.90',
+                                             market_id: "2",
+                                             product_id: '4'
+                                            },
+                                            {price: '1.56',
+                                             market_id: "2",
+                                             product_id: '5'
+                                            },
+                                            {price: '1.70',
+                                             market_id: "1",
+                                             product_id: '5'
+                                            },
+
                                            ])
+
+listings_list = Listing.create([{amount: '10',
+                           market_product_id: '2',
+                           shopping_session_id: '1',
+                          },
+                                {amount: '5',
+                                 market_product_id: '1',
+                                 shopping_session_id: '1',
+                                },
+                                {amount: '3',
+                                 market_product_id: '5',
+                                 shopping_session_id: '1',
+                                },
+                                {amount: '7',
+                                 market_product_id: '7',
+                                 shopping_session_id: '1',
+                                },
+                                {amount: '2',
+                                 market_product_id: '10',
+                                 shopping_session_id: '1',
+                                },
+                                {amount: '4',
+                                 market_product_id: '3',
+                                 shopping_session_id: '2',
+                                },
+                                {amount: '1',
+                                 market_product_id: '4',
+                                 shopping_session_id: '2',
+                                },
+                                {amount: '13',
+                                 market_product_id: '6',
+                                 shopping_session_id: '2',
+                                },
+                                {amount: '11',
+                                 market_product_id: '9',
+                                 shopping_session_id: '2',
+                                },
+                         ])
 

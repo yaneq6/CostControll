@@ -11,6 +11,7 @@ class ShoppingSessionsController < ApplicationController
     else
       render 'static_pages/home'
     end
+
   end
 
   def destroy
@@ -20,24 +21,37 @@ class ShoppingSessionsController < ApplicationController
 
   def show
     @shopping_session = ShoppingSession.find(params[:id])
-    @product_listing = @shopping_session.market_products
+    @listings = @shopping_session.listings
+    @listing = Listing.new
+    @market_products = MarketProduct.all
+
 
   end
 
   def index
     @shopping_session = ShoppingSession.paginate(page: params[:page])
+
+
   end
+
+
+
+
 
 
   private
 
   def shopping_session_params
-    params.require(:shopping_session).permit(:name, :market_id  )
+    params.require(:shopping_session).permit(:name, :market_id )
 
   end
+
+
 
   def correct_user
     @shopping_session = current_user.shopping_sessions.find_by(id: params[:id])
     redirect_to current_user if @shopping_session.nil?
   end
+
+
 end

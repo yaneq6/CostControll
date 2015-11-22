@@ -63,7 +63,6 @@ class MarketProductsController < ApplicationController
   end
 
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_market_product
@@ -72,7 +71,7 @@ class MarketProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def market_product_params
-      params.require(:market_product).permit(:price, :product_id, :market_id)
+      params.require(:market_product).permit(:id, :price, :product_id, :market_id)
     end
 end
 

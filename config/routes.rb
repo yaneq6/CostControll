@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  resources :market_products
+
+  resources :sessions
   resources :products
   resources :categories
   resources :markets
+  resources :market_products_shopping_sessions
+  resources :users
+  resources :shopping_sessions
+  resources :listings
+  resources :market_products
+
 
   get 'sessions/new'
 
@@ -31,8 +38,13 @@ Rails.application.routes.draw do
 
 
 
-  resources :users
-  resources :shopping_sessions
+
+
+
+
+
+
+
 
 
 
