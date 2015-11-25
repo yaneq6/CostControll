@@ -3,6 +3,8 @@ class ShoppingSessionsController < ApplicationController
   before_action :correct_user,   only: :destroy
 
 
+
+
   def create
     @shopping_session = current_user.shopping_sessions.build(shopping_session_params)
     if @shopping_session.save
@@ -11,6 +13,7 @@ class ShoppingSessionsController < ApplicationController
     else
       render 'static_pages/home'
     end
+
 
   end
 
@@ -24,20 +27,15 @@ class ShoppingSessionsController < ApplicationController
     @listings = @shopping_session.listings
     @listing = Listing.new
     @market_products = MarketProduct.all
-
+    @new_barcode = params[:new_barcode]
 
   end
+
 
   def index
     @shopping_session = ShoppingSession.paginate(page: params[:page])
 
-
   end
-
-
-
-
-
 
   private
 

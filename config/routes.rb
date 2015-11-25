@@ -35,6 +35,10 @@ Rails.application.routes.draw do
   get 'markets' => 'markets#index'
   get 'products' => 'products#index'
   get 'shoppinglist' => 'shopping_sessions#new'
+  post 'shopping_sessions/:id' => 'shopping_sessions#show'
+
+
+
 
 
 
