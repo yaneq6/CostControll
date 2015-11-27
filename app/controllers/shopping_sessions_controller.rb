@@ -28,7 +28,7 @@ class ShoppingSessionsController < ApplicationController
     @listing = Listing.new
     @market_products = MarketProduct.all
     @new_barcode = params[:new_barcode]
-
+    @product = Product.new
   end
 
 
